@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+
+<% if browser.device.mobile? %>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<% else %>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<% end %>
+<meta name="HandheldFriendly" content="true">
+<meta name="theme-color" content="#27503C">
+
 <html>
   <head>
     <title>The Modern Gaulish Language</title>
@@ -9,6 +18,19 @@
   </head>
 
   <body>
+  	<% if notice.present? %>
+	    <div class="alert alert-info" id="user_alert">
+	    	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	    	<%= notice %>
+	    </div>
+	<% end %>
+    <% if alert.present? %>
+	    <div class="alert alert-danger" id ="user_alert">
+	    	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	    	<%= alert %>
+	    </div>
+	<% end %>
+	
   	<nav class="navbar navbar-default" id="navbar-id">
 	  <div class="container-fluid">
 	    <!-- Brand and toggle get grouped for better mobile display -->
