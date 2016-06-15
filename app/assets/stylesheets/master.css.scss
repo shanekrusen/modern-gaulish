@@ -17,7 +17,7 @@
 }
 
 .box1 {
-  background-color: #27503C;
+  background-color: #19413C;
   position: relative;
   text-align: center;
   width:100%;
@@ -25,22 +25,22 @@
 
 .box h1 {
   font-family: 'Lobster', cursive;
-  color: #DAB82A;
+  color: #D4AB1D;
 }
 
 .box h2 {
   font-family: 'Lobster', cursive;
-  color: #DAB82A;
+  color: #D4AB1D;
 }
 
 .box p {
-  color: #DAB82A;
+  color: #D4AB1D;
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
 }
 
 .box2 {
-  background-color: #397558;
+  background-color: #0e2421;
   position: relative;
   text-align: center;
   width:100%;
@@ -84,14 +84,14 @@
   top: 0;
   width: 100%;
   border-radius: 0;
-  background-color: #27503C;
-  border-color: #27503C;
+  background-color: #19413C;
+  border-color: #19413C;
 }
 
 #navbar-brand-id {
   margin-top: -10px;
   font: 32px/42px 'Lobster', cursive;
-  color: #DAB82A;
+  color: #D4AB1D;
 }
 
 #navbar-brand-id:hover {
@@ -100,7 +100,7 @@
 
 #navbar-toggle-id {
   border-color: transparent;
-  background-color: #DAB82A;
+  background-color: #D4AB1D;
 }
 
 #navbar-toggle-id:hover {
@@ -108,16 +108,16 @@
 }
 
 #icon-bar-id {
-  background-color: #27503C;
+  background-color: #19413C;
 }
 
 #bs-example-navbar-collapse-1 {
-  border-color: #DAB82A;
+  border-color: #D4AB1D;
 }
 
 #nav-link-id {
   margin-top: 7px;
-  color: #DAB82A;
+  color: #D4AB1D;
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
 }
@@ -128,7 +128,7 @@
 
 #dropdown-toggle-id {
   margin-top: 7px;
-  color: #DAB82A;
+  color: #D4AB1D;
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
 }
@@ -138,14 +138,28 @@
 }
 
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    background-color: #397558 !important;
+    background-color: #0e2421 !important;
 }
 
 .dropdown-menu {
-  background-color: #27503C !important;
+  background-color: #19413C !important;
 }
 
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-  background-color: #27503C !important;
+  background-color: #19413C !important;
 }
 
+.header {
+  width: 100%;
+  min-height: 25vh;
+  max-height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0e2421;
+}
+
+.header h1 {
+  font-family: 'Lobster', cursive;
+  color: #D4AB1D;
+}
