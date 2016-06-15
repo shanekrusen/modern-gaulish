@@ -94,11 +94,58 @@
   color: #DAB82A;
 }
 
+#navbar-brand-id:hover {
+  color: white;
+}
+
 #navbar-toggle-id {
   border-color: transparent;
   background-color: #DAB82A;
 }
 
+#navbar-toggle-id:hover {
+  background-color: white;
+}
+
 #icon-bar-id {
   background-color: #27503C;
 }
+
+#bs-example-navbar-collapse-1 {
+  border-color: #DAB82A;
+}
+
+#nav-link-id {
+  margin-top: 7px;
+  color: #DAB82A;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
+
+#nav-link-id:hover {
+  color: white;
+}
+
+#dropdown-toggle-id {
+  margin-top: 7px;
+  color: #DAB82A;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
+
+#dropdown-toggle-id:hover {
+  color: white;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color: #397558 !important;
+}
+
+.dropdown-menu {
+  background-color: #27503C !important;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  background-color: #27503C !important;
+}
+
