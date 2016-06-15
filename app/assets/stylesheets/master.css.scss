@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext);
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,700i&subset=latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700&subset=latin-ext);
 
 ::-moz-selection { /* Code for Firefox */
     background: rgba(212, 171, 29, 0.5);
@@ -36,7 +36,7 @@
 .box p {
   color: #DAB82A;
   font-family: 'Raleway', sans-serif;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .box2 {
@@ -49,13 +49,16 @@
 .inner {
   min-height:100%;
   min-height: calc(100vh - 30px);
-  width: auto;
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: calc(100vh - 30px);
   max-height: auto;
 }
