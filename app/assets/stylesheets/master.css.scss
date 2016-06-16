@@ -202,6 +202,7 @@ textarea:focus, input:focus {
 }
 
 .btn-primary {
+  color: white !important;
   background-color: #D4AB1D !important;
   border-color: #D4AB1D !important;
 }
@@ -213,4 +214,18 @@ textarea:focus, input:focus {
 
 .user_form em {
   color: #D4AB1D;
+}
+
+button, input, optgroup, select, textarea {
+    color: #D4AB1D !important;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #0e2421 inset !important;
+    -webkit-text-fill-color: #D4AB1D !important;
+}
+
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px #0e2421 inset !important;
+    -webkit-text-fill-color: #D4AB1D !important;
 }

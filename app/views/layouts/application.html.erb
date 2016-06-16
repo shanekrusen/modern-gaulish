@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <% end %>
 <meta name="HandheldFriendly" content="true">
-<meta name="theme-color" content="#19413">
+<meta name="theme-color" content="#19413C">
 
 <html>
   <head>
@@ -58,7 +58,7 @@
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
 	        <% if user_signed_in? %>
-  				<li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+  				<li><%= link_to 'Sign out', destroy_user_session_path, method: :delete, id: "nav-link-id" %></li>
 			<% else %>
   				<li><%= link_to 'Sign In', new_user_session_path, id: "nav-link-id" %></li>
   				<li><%= link_to 'Sign Up', new_user_registration_path, id: "nav-link-id" %></li>
