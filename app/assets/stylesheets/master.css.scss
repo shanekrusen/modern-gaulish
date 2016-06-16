@@ -156,10 +156,57 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #0e2421;
+  background-color: #19413C;
 }
 
 .header h1 {
   font-family: 'Lobster', cursive;
   color: #D4AB1D;
+}
+
+label {
+  color: #D4AB1D;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
+
+.user_form a {
+  color: #D4AB1D;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.user_form a:hover {
+  color: white;
+}
+
+input {
+  border: none;
+  outline-color: #0e2421;
+  background-color: #0e2421;
+}
+
+input:focus {
+  outline-color: #D4AB1D;
+}
+
+input, select, textarea {
+  color: #D4AB1D;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
+
+textarea:focus, input:focus {
+    color: #D4AB1D;
+}
+
+.btn-primary {
+  background-color: #D4AB1D !important;
+  border-color: #D4AB1D !important;
+}
+
+.btn-primary:hover {
+  background-color: #ba9619 !important;
+  border-color: #ba9619 !important;
 }
