@@ -9,11 +9,39 @@
     background: rgba(212, 171, 29, 0.5);
 }
 
+::-webkit-scrollbar {
+      width: 10px;
+} /* this targets the default scrollbar (compulsory) */
+
+::-webkit-scrollbar-track {
+      background-color: #19413C;
+} /* the new scrollbar will have a flat appearance with the set background color */
+ 
+::-webkit-scrollbar-thumb {
+      background-color: #D4AB1D; 
+} /* this will style the thumb, ignoring the track */
+ 
+::-webkit-scrollbar-button {
+      background-color: #19413C;
+      color: #D4AB1D;
+} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+ 
+::-webkit-scrollbar-corner {
+      background-color: #D4AB1D;
+} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+
+
 .spacer {
   height: 30px;
   width: 100%;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.category-container {
+  background-color: #0e2421;
+  width: 90%;
+  border-radius: 6px;
 }
 
 .box1 {
@@ -33,10 +61,18 @@
   color: #D4AB1D;
 }
 
+.box h3 {
+  color: #D4AB1D;
+}
+
 .box p {
   color: #D4AB1D;
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
+}
+
+.text-container {
+  text-align: center;
 }
 
 .box2 {
@@ -47,6 +83,34 @@
 }
 
 .inner {
+  min-height:90%;
+  min-height: calc(90vh - 30px);
+  width: 90%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.next {
+  min-height: 10%;
+  min-height: 10vh;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  align-items: center;
+  justify-content: center;
+}
+
+span.glyphicon-chevron-down {
+  font-size: 1.6em;
+  color: #D4AB1D;
+}
+
+.manifest {
   min-height:100%;
   min-height: calc(100vh - 30px);
   width: 90%;
@@ -57,6 +121,7 @@
 
 .box {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - 30px);

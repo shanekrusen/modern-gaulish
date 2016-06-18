@@ -52,7 +52,7 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
-	        <li><a href="#" id="nav-link-id">Forum</a></li>
+	        <li><%= link_to 'Forum', forum_path, id: "nav-link-id" %></li>
 	        <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" id="dropdown-toggle-id" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Grammar <span class="caret"></span></a>
 	          <ul class="dropdown-menu">
@@ -72,6 +72,25 @@
 	  </div><!-- /.container-fluid -->
 	</nav>
 
-    <%= yield %>
+	<div class="body-container">
+    	<%= yield %>
+    </div>
+    
+    <!-- this cssfile can be found in the jScrollPane package -->
+    <link rel="stylesheet" type="text/css" href="jquery.jscrollpane.css" />
+
+    <!-- the jScrollPane script -->
+    <script type="text/javascript" src="jquery.jscrollpane.min.js"></script>
+ 
+    <!--instantiate after some browser sniffing to rule out webkit browsers-->
+    <script type="text/javascript">
+     
+      $(document).ready(function () {
+          if (!$.browser.webkit) {
+              $('.body-container').jScrollPane();
+          }
+      });
+     
+    </script>
   </body>
 </html>

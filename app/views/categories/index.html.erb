@@ -1,0 +1,13 @@
+<div class="spacer"></div>
+
+<div class="box box1">
+	<div class="inner">
+		<% @categories.each do |category| %>
+			<div class="category-container">
+				<h1><%= category.name %></h1><br />
+				<p><%= category.description %></p><br />
+			</div>
+			<br />
+		<% end %>
+	</div>
+</div>

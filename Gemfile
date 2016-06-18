@@ -54,3 +54,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'browser'
 
 gem 'devise'
+
+gem 'jscrollpane-rails'
+
+gem "jquery-mousewheel-rails"

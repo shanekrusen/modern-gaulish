@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.jscrollpane
+//= require jquery.mousewheel
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
