@@ -2,12 +2,15 @@
 
 <div class="box box1">
 	<div class="inner">
-		<% @categories.each do |category| %>
-			<div class="category-container">
-				<h1><%= category.name %></h1><br />
-				<p><%= category.description %></p><br />
-			</div>
-			<br />
-		<% end %>
+		<br />
+		<div class="categories">
+			<% @categories.each do |category| %>
+				<div class="category-container">
+					<h1><%= link_to category.name, category_path(category) %></h1><br />
+					<p><%= category.description %></p><br />
+				</div>
+				<br />
+			<% end %>
+		</div>
 	</div>
 </div>

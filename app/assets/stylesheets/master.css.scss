@@ -32,16 +32,27 @@
 
 
 .spacer {
-  height: 30px;
+  height: 50px;
   width: 100%;
   margin-top: 0;
   margin-bottom: 0;
 }
 
+.categories {
+  width: 100%;
+}
+
 .category-container {
+  padding-top: 5px;
   background-color: #0e2421;
-  width: 90%;
+  width: 100%;
   border-radius: 6px;
+}
+
+.category-container h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  color: #D4AB1D;
 }
 
 .box1 {
@@ -71,6 +82,10 @@
   font-weight: 700;
 }
 
+.box h1 a {
+  color: #D4AB1D;
+}
+
 .text-container {
   text-align: center;
 }
@@ -83,8 +98,7 @@
 }
 
 .inner {
-  min-height:90%;
-  min-height: calc(90vh - 30px);
+  height: auto;;
   width: 90%;
   text-align: center;
   display: flex;
@@ -124,8 +138,16 @@ span.glyphicon-chevron-down {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 30px);
+  min-height: calc(100vh - 50px);
   max-height: auto;
+}
+
+.posts_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
 }
 
 .clr {
@@ -293,4 +315,14 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 input:-webkit-autofill:focus {
     -webkit-box-shadow: 0 0 0 1000px #0e2421 inset !important;
     -webkit-text-fill-color: #D4AB1D !important;
+}
+
+.field textarea {
+  border: none;
+  outline-color: #0e2421;
+  background-color: #0e2421
+}
+
+.field textarea:focus {
+  outline-color: #D4AB1D;
 }
