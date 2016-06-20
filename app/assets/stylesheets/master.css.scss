@@ -275,16 +275,37 @@ span.glyphicon-chevron-down {
 }
 
 .header-half {
-  height: 100px;
+  width: 95%;
+  height: auto;
+  display: flex;
+  flex-direction: row !important;
+  align-items: flex-end;
+  justify-content: flex-end;
+  background-color: #19413C; 
+}
+
+.header-half-2 {
+  width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #19413C; 
+  background-color: #19413C;
+}
+
+.header-half-2 h1 {
+  font-family: 'Lobster', cursive;
+  color: #D4AB1D;
 }
 
 .header-half h1 {
   font-family: 'Lobster', cursive;
   color: #D4AB1D;
+}
+
+.small-spacer {
+  height: 40px;
+  width: 100%;
 }
 
 .modal-body {
