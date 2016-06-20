@@ -1,6 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,700&subset=latin-ext);
 
+body {
+  background-color: #19413C !important;
+}
+
 ::-moz-selection { /* Code for Firefox */
     background: rgba(212, 171, 29, 0.5);
 }
@@ -9,26 +13,26 @@
     background: rgba(212, 171, 29, 0.5);
 }
 
-::-webkit-scrollbar {
-      width: 10px;
-} /* this targets the default scrollbar (compulsory) */
-
-::-webkit-scrollbar-track {
-      background-color: #19413C;
-} /* the new scrollbar will have a flat appearance with the set background color */
- 
-::-webkit-scrollbar-thumb {
-      background-color: #D4AB1D; 
-} /* this will style the thumb, ignoring the track */
- 
-::-webkit-scrollbar-button {
-      background-color: #19413C;
-      color: #D4AB1D;
-} /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
- 
-::-webkit-scrollbar-corner {
-      background-color: #D4AB1D;
-} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+// ::-webkit-scrollbar {
+      // width: 10px;
+// } /* this targets the default scrollbar (compulsory) */
+// 
+// ::-webkit-scrollbar-track {
+      // background-color: #19413C;
+// } /* the new scrollbar will have a flat appearance with the set background color */
+//  
+// ::-webkit-scrollbar-thumb {
+      // background-color: #D4AB1D; 
+// } /* this will style the thumb, ignoring the track */
+//  
+// ::-webkit-scrollbar-button {
+      // background-color: #19413C;
+      // color: #D4AB1D;
+// } /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+//  
+// ::-webkit-scrollbar-corner {
+      // background-color: #D4AB1D;
+// } /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
 
 
 .spacer {
@@ -47,12 +51,37 @@
   background-color: #0e2421;
   width: 100%;
   border-radius: 6px;
+  word-wrap: break-word;
 }
 
 .category-container h2 {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   color: #D4AB1D;
+}
+
+.category-container h2 a {
+  font-family: 'Lobster', cursive !important;
+  color: #D4AB1D !important;
+}
+
+.category-container p {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  color: #D4AB1D;
+}
+
+.category-container h3 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  color: #D4AB1D;
+  font-size: 18px;
+}
+
+.category-container small {
+  color: #D4AB1D;
+  font-style: italic;
 }
 
 .box1 {
@@ -125,8 +154,7 @@ span.glyphicon-chevron-down {
 }
 
 .manifest {
-  min-height:100%;
-  min-height: calc(100vh - 30px);
+  height: auto;
   width: 90%;
   display: flex;
   align-items: center;
@@ -142,12 +170,8 @@ span.glyphicon-chevron-down {
   max-height: auto;
 }
 
-.posts_box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: auto;
+.forum-box {
+  min-height: auto !important;
 }
 
 .clr {
@@ -238,8 +262,7 @@ span.glyphicon-chevron-down {
 
 .header {
   width: 100%;
-  min-height: 25vh;
-  max-height: auto;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -249,6 +272,59 @@ span.glyphicon-chevron-down {
 .header h1 {
   font-family: 'Lobster', cursive;
   color: #D4AB1D;
+}
+
+.header-half {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #19413C; 
+}
+
+.header-half h1 {
+  font-family: 'Lobster', cursive;
+  color: #D4AB1D;
+}
+
+.modal-body {
+  border-color: #D4AB1D !important;
+  background-color: #19413C !important;
+}
+
+.modal-header {
+  border-color: #D4AB1D !important;
+  background-color: #19413C !important;
+}
+
+.modal-footer {
+  border-color: #D4AB1D !important;
+  background-color: #19413C !important;
+}
+
+#modal-diag-center {
+  position: fixed;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 300px;
+  width: 90%;
+}
+
+.modal-title {
+  font-family: 'Lobster', cursive !important;
+  color: #D4AB1D !important;
+}
+
+.btn-default {
+  border-color: #0e2421 !important;
+  background-color: #0e2421 !important;
+}
+
+.btn-default:hover {
+  background-color: #071211 !important;
 }
 
 label {
