@@ -15,14 +15,22 @@
 			<div class="category-container">
 				<h2><%= @post.title %></h2>
 				<h3><%= @post.content %></h3>
-				<small><%= @post.user.email %></small>>
+				<% if @post.user.id == 4 %>
+					<small>Guest</small>
+				<% else %>
+					<small><%= @post.user.email %></small>
+				<% end %>
 			</div>
 			<br />
 			<% @post.comments.each do |comment| %>
 				<div class="category-container">
 					<h3><%= comment.message %></h3>
 					<br/>
-					<small><%= comment.user.email %></small>
+					<% if comment.user.id == 4 %>
+						<small>Guest</small>
+					<% else %>
+						<small><%= comment.user.email %></small>
+					<% end %>
 				</div>
 				<br />
 			<% end %>

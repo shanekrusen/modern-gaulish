@@ -18,7 +18,11 @@
 				<div class="category-container">
 					<h2><%= link_to post.title, category_post_path(@category, post) %></h2>
 					<br/>
-					<p><%= post.user.email %></p>
+					<% if post.user.id == 4 %>
+						<p>Guest</p>
+					<% else %>
+						<p><%= post.user.email %></p>
+					<% end %>
 				</div>
 				<br />
 			<% end %>

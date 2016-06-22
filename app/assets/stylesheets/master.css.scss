@@ -13,27 +13,160 @@ body {
     background: rgba(212, 171, 29, 0.5);
 }
 
-// ::-webkit-scrollbar {
-      // width: 10px;
-// } /* this targets the default scrollbar (compulsory) */
-// 
-// ::-webkit-scrollbar-track {
-      // background-color: #19413C;
-// } /* the new scrollbar will have a flat appearance with the set background color */
-//  
-// ::-webkit-scrollbar-thumb {
-      // background-color: #D4AB1D; 
-// } /* this will style the thumb, ignoring the track */
-//  
-// ::-webkit-scrollbar-button {
-      // background-color: #19413C;
-      // color: #D4AB1D;
-// } /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
-//  
-// ::-webkit-scrollbar-corner {
-      // background-color: #D4AB1D;
-// } /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+.navbar-container {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  height:50px;
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #19413C;
+}
 
+@media (max-width: 768px) {
+  .navbar-brand-link {
+    width: 75% !important;
+  }
+}
+
+.navbar-brand-link {
+  display: flex;
+  width: 15%;
+}
+
+@media (max-width: 768px) {
+  .navbar-middle-left {
+    display: none !important;
+  }
+  
+  .navbar-middle-right {
+    display: none !important;
+  }
+}
+
+.navbar-middle-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width:21%;
+}
+
+.navbar-middle-left p {
+  margin-top: 15px;
+}
+
+.navbar-middle-left select {
+  height: 50px;
+}
+
+.navbar-middle-right {
+  margin-left: auto;
+  padding-right: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width:21%
+}
+
+.navbar-middle-right p {
+  margin-top: 15px;
+}
+
+@media (min-width: 768px) {
+  .navbar-button {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-button {
+    width: 25% !important;
+  }
+}
+
+.navbar-button {
+  display: flex;
+  justify-content: flex-end;
+  width: 10%;
+}
+
+@media (min-width: 768px) {
+  .breakpoint-collapse-container {
+    display: none;
+  }
+}
+
+.breakpoint-collapse-container {
+  background-color: #19413C;
+  border-top: 1px solid #D4AB1D;
+  padding-top: 5px;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: auto;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.breakpoint-collapse-container p {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  color: #D4AB1D;
+}
+
+.collapse-link {
+  margin-left: 15px;
+}
+
+.navbar-toggle-button {
+  margin: 7px;
+  margin-right: 10px;
+  align-self: flex-end;
+  width:55px;
+  height:35px;
+  border-radius:6px;
+}
+
+.navbar-toggle-button:focus {
+  outline: none;
+}
+
+span.glyphicon-menu-hamburger {
+    display:inline-block;
+    -webkit-transform:scale(1.5,1); /* Safari and Chrome */
+    -moz-transform:scale(1.5,1); /* Firefox */
+    -ms-transform:scale(1.5,1); /* IE 9 */
+    -o-transform:scale(1.5,1); /* Opera */
+    transform:scale(1.5,1); /* W3C */
+    font-size: 1.6em;
+    color: #19413C;
+}
+
+.grammar-dropdown {
+  padding-left: 10px;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
+
+.grammar-dropdown:focus {
+  background-color: #0e2421;
+  outline: none;
+}
+
+.grammar-dropdown:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.dropdown-group {
+  border: none;
+}
 
 .spacer {
   height: 50px;
@@ -227,7 +360,6 @@ span.glyphicon-chevron-down {
 }
 
 #nav-link-id {
-  margin-top: 7px;
   color: #D4AB1D;
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
