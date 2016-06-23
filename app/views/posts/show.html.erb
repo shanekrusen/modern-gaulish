@@ -34,7 +34,7 @@
 						<p><small>Guest</small></p>
 						<p><small><%= comment.guest_email %></small></p>
 					<% else %>
-						<p><small><%= comment,user.name %></small></p>
+						<p><small><%= comment.user.name %></small></p>
 						<p><small><%= comment.user.email %></small></p>
 					<% end %>
 				</div>
