@@ -483,6 +483,10 @@ span.glyphicon-chevron-down {
   background-color: #071211 !important;
 }
 
+.btn:focus {
+  outline: none !important;
+}
+
 label {
   color: #D4AB1D;
   font-family: 'Raleway', sans-serif;
