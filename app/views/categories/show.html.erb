@@ -19,8 +19,11 @@
 					<h2><%= link_to post.title, category_post_path(@category, post) %></h2>
 					<br/>
 					<% if post.user.id == 4 %>
+						<p><%= post.guest_name %></p>
 						<p>Guest</p>
+						<p><%= post.guest_email %></p>
 					<% else %>
+						<p><%= post.user.name %></p>
 						<p><%= post.user.email %></p>
 					<% end %>
 				</div>
@@ -44,6 +47,16 @@
 				<%= f.hidden_field :user_id, :value => current_user.id %>
 			<% else %>
 				<%= f.hidden_field :user_id, :value => 4 %>
+				<div class="field">
+					<%= f.label :guest_name %><br />
+					<%= f.text_area(:guest_name, size:"24x1") %>
+				</div>
+				<br />
+				<div class="field">
+					<%= f.label :guest_email %><br />
+					<%= f.email_field(:guest_email, size:"24x1") %>
+				</div>
+				<br />
 			<% end %>
 			<div class="field">
 				<%= f.label :title %><br />

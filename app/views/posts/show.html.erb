@@ -16,9 +16,12 @@
 				<h2><%= @post.title %></h2>
 				<h3><%= @post.content %></h3>
 				<% if @post.user.id == 4 %>
-					<small>Guest</small>
+					<p><small><%= @post.guest_name %></small></p>
+					<p><small>Guest</small></p>
+					<p><small><%= @post.guest_email %></small></p>
 				<% else %>
-					<small><%= @post.user.email %></small>
+					<p><small><%= @post.user.name %></small></p>
+					<p><small><%= @post.user.email %></small></p>
 				<% end %>
 			</div>
 			<br />
@@ -27,9 +30,12 @@
 					<h3><%= comment.message %></h3>
 					<br/>
 					<% if comment.user.id == 4 %>
-						<small>Guest</small>
+						<p><small><%= comment.guest_name %></small></p>
+						<p><small>Guest</small></p>
+						<p><small><%= comment.guest_email %></small></p>
 					<% else %>
-						<small><%= comment.user.email %></small>
+						<p><small><%= comment,user.name %></small></p>
+						<p><small><%= comment.user.email %></small></p>
 					<% end %>
 				</div>
 				<br />
@@ -62,6 +68,16 @@
 					<%= f.hidden_field :user_id, :value => current_user.id %>
 				<% else %>
 					<%= f.hidden_field :user_id, :value => 4 %>
+					<div class="field">
+						<%= f.label :guest_name %><br />
+						<%= f.text_area(:guest_name, size:"24x1") %>
+					</div>
+					<br />
+					<div class="field">
+						<%= f.label :guest_email %><br />
+						<%= f.email_field(:guest_email, size:"24x1") %>
+					</div>
+					<br />
 				<% end %>
 				<%= f.hidden_field :category_id, :value => @category.id %>
 				<%= f.hidden_field :post_id, :value => @post.id %>

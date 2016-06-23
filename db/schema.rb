@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160620035231) do
+ActiveRecord::Schema.define(version: 20160623050958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,11 @@ ActiveRecord::Schema.define(version: 20160620035231) do
     t.integer  "post_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "guest_name"
+    t.string   "guest_email"
     t.index ["category_id", "post_id"], name: "index_comments_on_category_id_and_post_id", using: :btree
+    t.index ["guest_email"], name: "index_comments_on_guest_email", using: :btree
+    t.index ["guest_name", "guest_email"], name: "index_comments_on_guest_name_and_guest_email", using: :btree
     t.index ["post_id"], name: "index_comments_on_post_id", using: :btree
     t.index ["user_id", "category_id", "post_id"], name: "index_comments_on_user_id_and_category_id_and_post_id", using: :btree
   end
@@ -42,7 +46,11 @@ ActiveRecord::Schema.define(version: 20160620035231) do
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "guest_name"
+    t.string   "guest_email"
     t.index ["category_id"], name: "index_posts_on_category_id", using: :btree
+    t.index ["guest_email"], name: "index_posts_on_guest_email", using: :btree
+    t.index ["guest_name", "guest_email"], name: "index_posts_on_guest_name_and_guest_email", using: :btree
     t.index ["user_id", "category_id"], name: "index_posts_on_user_id_and_category_id", using: :btree
   end
 
@@ -60,7 +68,9 @@ ActiveRecord::Schema.define(version: 20160620035231) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "guest",                  default: false
+    t.string   "name"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["name"], name: "index_users_on_name", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
