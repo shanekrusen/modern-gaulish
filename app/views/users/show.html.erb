@@ -1,0 +1,38 @@
+<div class="spacer"></div>
+
+<div style="clear:both;">
+
+<div class="box box1">
+	<div class="dashboard">
+		<div class="dashboard-header">
+			<div class="dashboard-header-image">
+				<%= image_tag('user.png') %>
+			</div>
+			<div class="dashboard-header-title">
+				<h2><%= @user.name %></h2>
+				<small><%= @user.email %></small>
+				<br />
+				<% if @user.bio.present? %>
+					<p><%= @user.bio.bio %></p>
+				<% end %>
+			</div>
+		</div>
+		<br />
+		<div class="dashboard-content">
+			<div class="dashboard-options">
+				<h2>Options</h2>
+				<p><%= link_to 'Edit Information', edit_user_registration_path, class: "btn btn-primary" %></p>
+				<% if @user.bio.present? %>
+					<%= link_to 'Edit Bio', edit_user_bio_path(@user, @bio), class: "btn btn-primary" %>
+				<% else %>
+					<%= link_to 'Edit Bio', new_user_bio_path(@user), class: "btn btn-primary" %>
+				<% end %>
+			</div>
+			<div class="dashboard-stats">
+				<h2>Stats</h2>
+				<p><%= @user.posts.count %> posts</p>
+				<p><%= @user.comments.count %> comments</p>
+			</div>	
+		</div>
+	</div>
+</div>

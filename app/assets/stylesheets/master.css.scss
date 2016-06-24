@@ -21,7 +21,7 @@ body {
   width:100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   background-color: #19413C;
 }
 
@@ -33,7 +33,7 @@ body {
 
 .navbar-brand-link {
   display: flex;
-  width: 15%;
+  width: auto;
 }
 
 @media (max-width: 768px) {
@@ -47,10 +47,11 @@ body {
 }
 
 .navbar-middle-left {
+  margin-right:auto;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  width:21%;
+  width:auto;
 }
 
 .navbar-middle-left p {
@@ -62,12 +63,11 @@ body {
 }
 
 .navbar-middle-right {
-  margin-left: auto;
   padding-right: 15px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  width:21%
+  width:auto;
 }
 
 .navbar-middle-right p {
@@ -89,7 +89,7 @@ body {
 .navbar-button {
   display: flex;
   justify-content: flex-end;
-  width: 10%;
+  width: auto;
 }
 
 @media (min-width: 768px) {
@@ -182,11 +182,25 @@ span.glyphicon-menu-hamburger {
 }
 
 .category-container {
+  display:flex;
+  flex-direction:row;
   padding-top: 5px;
   background-color: #0e2421;
   width: 100%;
   border-radius: 6px;
   word-wrap: break-word;
+}
+
+.post-user-info {
+  width: 25%;
+  height: 100%;
+  padding-right: 5px;
+  border-right: 1px solid #D4AB1D;
+}
+
+.post-container {
+  width: 75%;
+  height: 100%;
 }
 
 .category-container h2 {
@@ -197,6 +211,7 @@ span.glyphicon-menu-hamburger {
 
 .category-container h2 a {
   font-family: 'Lobster', cursive !important;
+  font-family: 'lobster_1.3regular' !important;
   color: #D4AB1D !important;
 }
 
@@ -228,11 +243,13 @@ span.glyphicon-menu-hamburger {
 
 .box h1 {
   font-family: 'Lobster', cursive;
+  font-family: 'lobster_1.3regular';
   color: #D4AB1D;
 }
 
 .box h2 {
   font-family: 'Lobster', cursive;
+  font-family: 'lobster_1.3regular';
   color: #D4AB1D;
 }
 
@@ -268,13 +285,77 @@ span.glyphicon-menu-hamburger {
 }
 
 .inner {
-  height: auto;;
+  height: auto;
   width: 90%;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.user_form i {
+  color: #D4AB1D;
+  font-style: italic;
+}
+
+.dashboard {
+  height: 90%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard small {
+  color: #D4AB1D;
+  font-style: italic;
+}
+
+.dashboard-header {
+  height:auto;
+  width: 100%;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.dashboard-header-title {
+  height: auto;
+  width: 75%;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.dashboard-header-image {
+  height: 100%;
+  width: 25%;
+  display:flex;
+  justify-content: flex-end;
+  align-items: center
+}
+
+.dashboard-content {
+  height: auto;
+  width:100%;
+  display:flex;
+  flex-direction:row;
+  justify-content: space-between;
+}
+
+.dashboard-options {
+  text-align: left;
+  display:flex;
+  flex-direction:column;
+  justify-content: flex-start;
+}
+
+.dashboard-stats {
+  text-align: right;
+  display:flex;
+  flex-direction:column;
+  justify-content: flex-end;
 }
 
 .next {
@@ -330,19 +411,11 @@ span.glyphicon-chevron-down {
     border-radius: 0px;
 }
 
-.navbar#navbar-id {
-  z-index: 9999;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  border-radius: 0;
-  background-color: #19413C;
-  border-color: #19413C;
-}
-
 #navbar-brand-id {
   margin-top: -10px;
   font: 32px/42px 'Lobster', cursive;
+  font-family: 'lobster_1.3regular';
+  font-size: 32px/42px;
   color: #D4AB1D;
 }
 
@@ -352,14 +425,6 @@ span.glyphicon-chevron-down {
 
 #navbar-toggle-id:hover {
   background-color: white;
-}
-
-#icon-bar-id {
-  background-color: #19413C;
-}
-
-#bs-example-navbar-collapse-1 {
-  border-color: #D4AB1D;
 }
 
 #nav-link-id {
@@ -383,18 +448,6 @@ span.glyphicon-chevron-down {
   color: white;
 }
 
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    background-color: #0e2421 !important;
-}
-
-.dropdown-menu {
-  background-color: #19413C !important;
-}
-
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-  background-color: #19413C !important;
-}
-
 .header {
   width: 100%;
   height: auto;
@@ -406,6 +459,7 @@ span.glyphicon-chevron-down {
 
 .header h1 {
   font-family: 'Lobster', cursive;
+  font-family: 'lobster_1.3regular';
   color: #D4AB1D;
 }
 
@@ -430,11 +484,13 @@ span.glyphicon-chevron-down {
 
 .header-half-2 h1 {
   font-family: 'Lobster', cursive;
+  font-family: 'lobster_1.3regular';
   color: #D4AB1D;
 }
 
 .header-half h1 {
   font-family: 'Lobster', cursive;
+  font-family: 'lobster_1.3regular';
   color: #D4AB1D;
 }
 
@@ -471,6 +527,7 @@ span.glyphicon-chevron-down {
 
 .modal-title {
   font-family: 'Lobster', cursive !important;
+  font-family: 'lobster_1.3regular' !important;
   color: #D4AB1D !important;
 }
 

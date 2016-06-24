@@ -13,30 +13,43 @@
 		<br />
 		<div class="categories">
 			<div class="category-container">
-				<h2><%= @post.title %></h2>
-				<h3><%= @post.content %></h3>
-				<% if @post.user.id == 4 %>
-					<p><small><%= @post.guest_name %></small></p>
-					<p><small>Guest</small></p>
-					<p><small><%= @post.guest_email %></small></p>
-				<% else %>
-					<p><small><%= @post.user.name %></small></p>
-					<p><small><%= @post.user.email %></small></p>
-				<% end %>
+				<div class="post-user-info">
+					<% if @post.user.id == 4 %>
+						<p><small><%= @post.guest_name %></small></p>
+						<p><small>Guest</small></p>
+						<p><small><%= @post.guest_email %></small></p>
+					<% else %>
+						<p><small><%= @post.user.name %></small></p>
+						<p><small><%= @post.user.email %></small></p>
+						<p class="bio-button"><small style="text-decoration: underline;">Bio:</small></p>
+						<p class="bio-content"><small><%= @post.user.bio.bio %></small></p>
+					<% end %>
+				</div>
+				<div class="post-container">
+					<h2><%= @post.title %></h2>
+					<h3><%= @post.content %></h3>
+				</div>
 			</div>
 			<br />
 			<% @post.comments.each do |comment| %>
 				<div class="category-container">
-					<h3><%= comment.message %></h3>
-					<br/>
-					<% if comment.user.id == 4 %>
-						<p><small><%= comment.guest_name %></small></p>
-						<p><small>Guest</small></p>
-						<p><small><%= comment.guest_email %></small></p>
-					<% else %>
-						<p><small><%= comment.user.name %></small></p>
-						<p><small><%= comment.user.email %></small></p>
-					<% end %>
+					<div class="post-user-info">
+						<% if comment.user.id == 4 %>
+							<p><small><%= comment.guest_name %></small></p>
+							<p><small>Guest</small></p>
+							<p><small><%= comment.guest_email %></small></p>
+						<% else %>
+							<p><small><%= comment.user.name %></small></p>
+							<p><small><%= comment.user.email %></small></p>
+							<% if comment.user.bio.present? %>
+								<p class="bio-button"><small style="text-decoration: underline;">Bio:</small></p>
+								<p class="bio-content"><small><%= comment.user.bio.bio %></small></p>
+							<% end %>
+						<% end %>
+					</div>
+					<div class="post-container">
+						<h3><%= comment.message %></h3>	
+					</div>
 				</div>
 				<br />
 			<% end %>
