@@ -196,16 +196,25 @@ span.glyphicon-menu-hamburger {
 }
 
 .post-user-info {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
   width: 33%;
   height: 100%;
   padding-right: 5px;
   padding-left: 5px;
   border-right: 1px solid #D4AB1D;
+  word-wrap: break-word;
+}
+
+.post-user-info p {
+    display:block;
+    max-width: 100%;
 }
 
 .post-container {
   width: 66%;
-  height: 100%;
+  height: auto;
 }
 
 .category-container h2 {
@@ -309,6 +318,10 @@ span.glyphicon-menu-hamburger {
   width: 90%;
   display: flex;
   flex-direction: column;
+}
+
+.user-image {
+  width: 100%;
 }
 
 .dashboard small {
