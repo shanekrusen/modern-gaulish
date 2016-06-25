@@ -182,8 +182,6 @@ span.glyphicon-menu-hamburger {
 }
 
 .category-container {
-  display:flex;
-  flex-direction:row;
   padding-top: 5px;
   background-color: #0e2421;
   width: 100%;
@@ -191,15 +189,22 @@ span.glyphicon-menu-hamburger {
   word-wrap: break-word;
 }
 
+.forum-container {
+  display:flex;
+  flex-direction:row;
+  padding-top: 0px;
+}
+
 .post-user-info {
-  width: 25%;
+  width: 33%;
   height: 100%;
   padding-right: 5px;
+  padding-left: 5px;
   border-right: 1px solid #D4AB1D;
 }
 
 .post-container {
-  width: 75%;
+  width: 66%;
   height: 100%;
 }
 
