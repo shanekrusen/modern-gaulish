@@ -6,4 +6,8 @@ class GrammarPagesController < ApplicationController
   def orthography
     
   end
+  
+  def phonology
+    
+  end
 end

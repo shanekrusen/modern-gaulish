@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
   get 'introduction', to: "grammar_pages#introduction"
   get 'orthography', to: "grammar_pages#orthography"
+  get 'phonology', to: "grammar_pages#phonology"
   get 'forum', to: "categories#index"
   
   resources :categories, only: :show do
