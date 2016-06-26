@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   
   get 'introduction', to: "grammar_pages#introduction"
+  get 'orthography', to: "grammar_pages#orthography"
   get 'forum', to: "categories#index"
   
   resources :categories, only: :show do
