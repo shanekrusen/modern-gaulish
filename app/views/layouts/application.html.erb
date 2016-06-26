@@ -49,6 +49,8 @@
 		</div>
 		<div class="navbar-middle-right">
 			<% if user_signed_in? %>
+				<span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;
+				<p class="notification-count"><%= current_user.user_notifications.count %>&nbsp;&nbsp;&nbsp;&nbsp;</p>
 				<p><%= link_to 'My Account', user_path(current_user), id: "nav-link-id" %>
   				<p>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Sign out', destroy_user_session_path, method: :delete, id: "nav-link-id" %></p>
 			<% else %>
@@ -63,16 +65,36 @@
 		</div>
 	</div>
 	
+	<div class="notification-breakpoint-menu">
+		<% if user_signed_in? %>
+			<% current_user.user_notifications.each do |notification| %>
+				<p class="collapse-link"><%= notification.notification %></p>
+				<p class="collapse-link"><%= link_to notification.post.title, user_notification_path(notification), method: :delete, class: "collapse-link", id: "nav-link-id" %></p>
+			<% end %>
+		<% end %>
+	</div>
+	
 	<div class="breakpoint-collapse-container">
 		<%= link_to 'Forum', forum_path, class: "collapse-link", id: "nav-link-id" %></p>
 		<% if user_signed_in? %>
+			<p class="notification-toggle-button collapse-link"><%= current_user.user_notifications.count %> Notifications +</p>
+			<div class="notifications-collapsed-menu">
+				<% current_user.user_notifications.each do |notification| %>
+					<p class="collapse-link"><%= notification.notification %></p>
+					<p class="collapse-link"><%= link_to notification.post.title, user_notification_path(notification), method: :delete, class: "collapse-link", id: "nav-link-id" %></p>
+				<% end %>
+			</div>
+			<!-- <% current_user.user_notifications.each do |notification| %>
+				<p><%= notification.notification %></p>
+				<p><%= link_to notification.post.title, category_post_path(notification.post.category, notification.post), class: "collapse-link", id: "nav-link-id" %></p>
+			<% end %> -->
 			<p><%= link_to 'My Account', user_path(current_user), class: "collapse-link", id: "nav-link-id" %>
 			<p><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "collapse-link", id: "nav-link-id" %></p>
 		<% else %>
 			<p><%= link_to 'Sign In', new_user_session_path, class: "collapse-link", id: "nav-link-id" %></p>
 			<p><%= link_to 'Sign Up', new_user_registration_path, class: "collapse-link", id: "nav-link-id" %></p>
 		<% end %>
-		<select name="Grammar" class="grammar-dropdown">
+		<select name="Grammar" class="grammar-dropdown" class="grammar-dropdown">
 			<option>Grammar</option>
 			<option value="/introduction">Introduction</option>
 		</select>
@@ -87,6 +109,20 @@
 			$('.breakpoint-collapse-container').hide();
 		  	$('.navbar-toggle-button').click(function(){
 		    	$('.breakpoint-collapse-container').slideToggle();
+		  	});
+		});
+		
+		$(document).ready(function(){
+			$('.notifications-collapsed-menu').hide();
+		  	$('.notification-toggle-button').click(function(){
+		    	$('.notifications-collapsed-menu').slideToggle();
+		  	});
+		});
+		
+		$(document).ready(function(){
+			$('.notification-breakpoint-menu').hide();
+		  	$('.glyphicon-exclamation-sign').click(function(){
+		    	$('.notification-breakpoint-menu').slideToggle();
 		  	});
 		});
 		

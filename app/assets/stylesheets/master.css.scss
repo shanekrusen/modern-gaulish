@@ -92,6 +92,23 @@ body {
   width: auto;
 }
 
+.notification-breakpoint-menu {
+  background-color: #19413C;
+  border-top: 1px solid #D4AB1D;
+  padding-top: 5px;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: auto;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.notification-breakpoint-menu p {
+  color: #D4AB1D;
+}
+
 @media (min-width: 768px) {
   .breakpoint-collapse-container {
     display: none;
@@ -114,6 +131,19 @@ body {
 .breakpoint-collapse-container p {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
+  color: #D4AB1D;
+}
+
+.notifications-collapsed-menu {
+  background-color: #0e2421;
+}
+
+.glyphicon-exclamation-sign {
+  margin-top: 15px;
+  color: #D4AB1D;
+}
+
+.notification-count {
   color: #D4AB1D;
 }
 

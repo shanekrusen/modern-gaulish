@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160624212641) do
+ActiveRecord::Schema.define(version: 20160625223207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,14 @@ ActiveRecord::Schema.define(version: 20160624212641) do
     t.index ["guest_email"], name: "index_posts_on_guest_email", using: :btree
     t.index ["guest_name", "guest_email"], name: "index_posts_on_guest_name_and_guest_email", using: :btree
     t.index ["user_id", "category_id"], name: "index_posts_on_user_id_and_category_id", using: :btree
+  end
+
+  create_table "user_notifications", force: :cascade do |t|
+    t.text     "notification"
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|
