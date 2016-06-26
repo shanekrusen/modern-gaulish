@@ -50,7 +50,7 @@
 		</div>
 		<div class="navbar-middle-right">
 			<% if user_signed_in? %>
-				<span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;
+				<span class="glyphicon glyphicon-exclamation-sign" style="cursor: pointer;"></span>&nbsp;
 				<p class="notification-count"><%= current_user.user_notifications.count %>&nbsp;&nbsp;&nbsp;&nbsp;</p>
 				<p><%= link_to 'My Account', user_path(current_user), id: "nav-link-id" %>
   				<p>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Sign out', destroy_user_session_path, method: :delete, id: "nav-link-id" %></p>
@@ -78,7 +78,7 @@
 	<div class="breakpoint-collapse-container">
 		<%= link_to 'Forum', forum_path, class: "collapse-link", id: "nav-link-id" %></p>
 		<% if user_signed_in? %>
-			<p class="notification-toggle-button collapse-link"><%= current_user.user_notifications.count %> Notifications +</p>
+			<p class="notification-toggle-button collapse-link" style="cursor: pointer;"><%= current_user.user_notifications.count %> Notifications +</p>
 			<div class="notifications-collapsed-menu">
 				<% current_user.user_notifications.each do |notification| %>
 					<p class="collapse-link"><%= notification.notification %></p>
