@@ -207,6 +207,13 @@ span.glyphicon-menu-hamburger {
   margin-bottom: 0;
 }
 
+#spacer-id {
+  height: 50px;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .categories {
   width: 100%;
 }
@@ -229,7 +236,7 @@ span.glyphicon-menu-hamburger {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 33%;
+  width: 40%;
   height: inherit;
   padding-right: 5px;
   padding-left: 5px;
@@ -243,7 +250,7 @@ span.glyphicon-menu-hamburger {
 }
 
 .post-container {
-  width: 66%;
+  width: 60%;
   height: auto;
 }
 
@@ -361,7 +368,7 @@ span.glyphicon-menu-hamburger {
 }
 
 .dashboard-header {
-  height:auto;
+  height: auto;
   width: 100%;
   display:flex;
   flex-direction: row;
@@ -378,7 +385,7 @@ span.glyphicon-menu-hamburger {
 }
 
 .dashboard-header-image {
-  height: 100%;
+  height: inherit;
   width: 25%;
   display:flex;
   justify-content: flex-end;
@@ -401,6 +408,7 @@ span.glyphicon-menu-hamburger {
 }
 
 .dashboard-stats {
+  height: auto;
   text-align: right;
   display:flex;
   flex-direction:column;
