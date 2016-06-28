@@ -13,6 +13,13 @@ body {
     background: rgba(212, 171, 29, 0.5);
 }
 
+.inline-citation {
+  white-space: pre-wrap;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  color: #D4AB1D;
+}
+
 .navbar-container {
   position: fixed;
   top: 0;

@@ -70,9 +70,13 @@
 	
 	<div class="notification-breakpoint-menu">
 		<% if user_signed_in? %>
-			<% current_user.user_notifications.each do |notification| %>
-				<p class="collapse-link"><%= notification.notification %></p>
-				<p class="collapse-link"><%= link_to notification.post.title, user_notification_path(notification), method: :delete, class: "collapse-link", id: "nav-link-id" %></p>
+			<% if current_user.user_notifications.present? %>
+				<% current_user.user_notifications.each do |notification| %>
+					<p class="collapse-link"><%= notification.notification %></p>
+					<p class="collapse-link"><%= link_to notification.post.title, user_notification_path(notification), method: :delete, class: "collapse-link", id: "nav-link-id" %></p>
+				<% end %>
+			<% else %>
+				<p>No Notifications</p>
 			<% end %>
 		<% end %>
 	</div>
@@ -82,9 +86,13 @@
 		<% if user_signed_in? %>
 			<p class="notification-toggle-button collapse-link" style="cursor: pointer;"><%= current_user.user_notifications.count %> Notifications +</p>
 			<div class="notifications-collapsed-menu">
-				<% current_user.user_notifications.each do |notification| %>
-					<p class="collapse-link"><%= notification.notification %></p>
-					<p class="collapse-link"><%= link_to notification.post.title, user_notification_path(notification), method: :delete, class: "collapse-link", id: "nav-link-id" %></p>
+				<% if current_user.user_notifications.present? %>
+					<% current_user.user_notifications.each do |notification| %>
+						<p class="collapse-link"><%= notification.notification %></p>
+						<p class="collapse-link"><%= link_to notification.post.title, user_notification_path(notification), method: :delete, class: "collapse-link", id: "nav-link-id" %></p>
+					<% end %>
+				<% else %>
+					<p>No Notifications</p>
 				<% end %>
 			</div>
 			<!-- <% current_user.user_notifications.each do |notification| %>
