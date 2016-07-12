@@ -111,12 +111,14 @@
 			<p><%= link_to 'Sign In', new_user_session_path, class: "collapse-link", id: "nav-link-id" %></p>
 			<p><%= link_to 'Sign Up', new_user_registration_path, class: "collapse-link", id: "nav-link-id" %></p>
 		<% end %>
-		<p style="cursor: pointer;" id="nav-link-id" class="grammar collapse-link">Grammar &#x2304;</p>
-		<div class="grammar-box">
-			<%= link_to 'Introduction', introduction_path, class: "collapse-link", id:"nav-link-id" %><br />
-			<%= link_to 'Orthography', orthography_path, class: "collapse-link", id:"nav-link-id" %><br />
-			<%= link_to 'Phonology', phonology_path, class: "collapse-link", id:"nav-link-id" %><br />
-			<%= link_to 'Sound Changes', sound_changes_path, class: "collapse-link", id:"nav-link-id" %><br />
+		<div class="grammar-mobile-wrapper">
+			<p style="cursor: pointer;" id="nav-link-id" class="grammar collapse-link">Grammar &#x2304;</p>
+			<div class="grammar-box">
+				<%= link_to 'Introduction', introduction_path, class: "collapse-link", id:"nav-link-id" %><br />
+				<%= link_to 'Orthography', orthography_path, class: "collapse-link", id:"nav-link-id" %><br />
+				<%= link_to 'Phonology', phonology_path, class: "collapse-link", id:"nav-link-id" %><br />
+				<%= link_to 'Sound Changes', sound_changes_path, class: "collapse-link", id:"nav-link-id" %><br />
+			</div>
 		</div>
 	</div>
 	
