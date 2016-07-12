@@ -2,11 +2,11 @@
 
 ## Versions
 
-Built on **Ruby 2.3.1** and **Rails 5**
+Built with `Ruby 2.3.1` and `Rails 5`
 
 ## Deployment
 
-Deployed to **Heroku** using the **Cedar** stack.
+Stored on Github (version `48`) and Deployed to **Heroku** using the **Cedar** stack (version `48`).
 
 ## Contributors
 
