@@ -14,6 +14,6 @@ Deployed to **Heroku** using the **Cedar** stack.
 
 Much thanks to **Steve Gwiríu Mórghnath Hansen** for his support during this effort, and for his enormous amont of work on compiling the grammar and lexicon for the language.
 
-Much thanks to **Klint Thrasher**, my mentor, for enormous amount of help and guidance.
+Much thanks to **Klint Thrasher**, my mentor, for an enormous amount of help and guidance.
 
-Much thanks to the **Modern Gaulish Languag** community on Facebook for testing and providing feedback. May this website become a new home for our little family.
+Much thanks to the **Modern Gaulish Language** community on Facebook for testing and providing feedback. May this website become a new home for our little family.
