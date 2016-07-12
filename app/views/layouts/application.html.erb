@@ -42,18 +42,37 @@
 		</div>
 		<div class="navbar-middle-left">
 			<p><%= link_to 'Forum', forum_path, id: "nav-link-id" %>&nbsp;&nbsp;&nbsp;&nbsp;</p>
-			<select name="Grammar" class="grammar-dropdown">
-				<option>Grammar</option>
-				<option value="/introduction">Introduction</option>
-				<option value="/orthography">Orthography</option>
-				<option value="/phonology">Phonology</option>
-				<option value="/sound_changes">Sound Changes</option>
-			</select>
+			<div class="grammar-desktop-wrapper">
+				<div class="grammar-desktop-container">
+					<p style="cursor: pointer;" class="grammar-desktop" id="nav-link-id">Grammar v</p>
+				</div>
+				<div class="grammar-desktop-menu">
+					<%= link_to 'Introduction', introduction_path, class: "collapse-link", id:"nav-link-id" %><br />
+					<%= link_to 'Orthography', orthography_path, class: "collapse-link", id:"nav-link-id" %><br />
+					<%= link_to 'Phonology', phonology_path, class: "collapse-link", id:"nav-link-id" %><br />
+					<%= link_to 'Sound Changes', sound_changes_path, class: "collapse-link", id:"nav-link-id" %><br />
+				</div>
+			</div>
 		</div>
 		<div class="navbar-middle-right">
 			<% if user_signed_in? %>
-				<span class="glyphicon glyphicon-exclamation-sign" style="cursor: pointer;"></span>&nbsp;
-				<p class="notification-count"><%= current_user.user_notifications.count %>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+				<div class="notifications-desktop-wrapper">
+					<div class="notifications-desktop-container">
+						<span class="glyphicon glyphicon-exclamation-sign" style="cursor: pointer;"> <%= current_user.user_notifications.count %></span>
+					</div>
+					<div class="notification-breakpoint-menu">
+						<% if user_signed_in? %>
+							<% if current_user.user_notifications.present? %>
+								<% current_user.user_notifications.each do |notification| %>
+									<p class="collapse-link"><%= notification.notification %></p>
+									<p class="collapse-link"><%= link_to notification.post.title, user_notification_path(notification), method: :delete, class: "collapse-link", id: "nav-link-id" %></p>
+								<% end %>
+							<% else %>
+								<p class="collapse-link">No Notifications</p>
+							<% end %>
+						<% end %>
+					</div>
+				</div>&nbsp;&nbsp;&nbsp;&nbsp;
 				<p><%= link_to 'My Account', user_path(current_user), id: "nav-link-id" %>
   				<p>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Sign out', destroy_user_session_path, method: :delete, id: "nav-link-id" %></p>
 			<% else %>
@@ -68,19 +87,6 @@
 		</div>
 	</div>
 	
-	<div class="notification-breakpoint-menu">
-		<% if user_signed_in? %>
-			<% if current_user.user_notifications.present? %>
-				<% current_user.user_notifications.each do |notification| %>
-					<p class="collapse-link"><%= notification.notification %></p>
-					<p class="collapse-link"><%= link_to notification.post.title, user_notification_path(notification), method: :delete, class: "collapse-link", id: "nav-link-id" %></p>
-				<% end %>
-			<% else %>
-				<p>No Notifications</p>
-			<% end %>
-		<% end %>
-	</div>
-	
 	<div class="breakpoint-collapse-container">
 		<%= link_to 'Forum', forum_path, class: "collapse-link", id: "nav-link-id" %></p>
 		<% if user_signed_in? %>
@@ -92,7 +98,7 @@
 						<p class="collapse-link"><%= link_to notification.post.title, user_notification_path(notification), method: :delete, class: "collapse-link", id: "nav-link-id" %></p>
 					<% end %>
 				<% else %>
-					<p>No Notifications</p>
+					<p class="collapse-link">No Notifications</p>
 				<% end %>
 			</div>
 			<!-- <% current_user.user_notifications.each do |notification| %>
@@ -105,13 +111,13 @@
 			<p><%= link_to 'Sign In', new_user_session_path, class: "collapse-link", id: "nav-link-id" %></p>
 			<p><%= link_to 'Sign Up', new_user_registration_path, class: "collapse-link", id: "nav-link-id" %></p>
 		<% end %>
-		<select name="Grammar" class="grammar-dropdown" class="grammar-dropdown">
-			<option>Grammar</option>
-			<option value="/introduction">Introduction</option>
-			<option value="/orthography">Orthography</option>
-			<option value="/phonology">Phonology</option>
-			<option value="/sound_changes">Sound Changes</option>
-		</select>
+		<p style="cursor: pointer;" class="grammar collapse-link">Grammar +</p>
+		<div class="grammar-box">
+			<%= link_to 'Introduction', introduction_path, class: "collapse-link", id:"nav-link-id" %><br />
+			<%= link_to 'Orthography', orthography_path, class: "collapse-link", id:"nav-link-id" %><br />
+			<%= link_to 'Phonology', phonology_path, class: "collapse-link", id:"nav-link-id" %><br />
+			<%= link_to 'Sound Changes', sound_changes_path, class: "collapse-link", id:"nav-link-id" %><br />
+		</div>
 	</div>
 	
 	<div style="clear: both;"></div>
@@ -120,28 +126,29 @@
     
     <script type="text/javascript">
     	$(document).ready(function(){
-			$('.breakpoint-collapse-container').hide();
-		  	$('.navbar-toggle-button').click(function(){
-		    	$('.breakpoint-collapse-container').slideToggle();
-		  	});
-		});
+    		
+    		var dropDown = function( hideParameter, clickParameter) {
+    			$(hideParameter).hide();
+    			$(clickParameter).click(function(){
+    				$(hideParameter).slideToggle();
+    			});
+    		};
+    		
+    		var activate = function(clickTarget, changeTarget) {
+    			$(clickTarget).click(function() {
+    				$(changeTarget).toggleClass('dark');
+    			});
+    		};
+    		
+    		dropDown('.breakpoint-collapse-container', '.navbar-toggle-button');
+    		dropDown('.grammar-box', '.grammar');
+    		dropDown('.grammar-desktop-menu', '.grammar-desktop');
+    		dropDown('.notifications-collapsed-menu', '.notification-toggle-button');
+    		dropDown('.notification-breakpoint-menu', '.glyphicon-exclamation-sign');
+			
+			activate('.grammar-desktop', '.grammar-desktop-wrapper');
+			activate('.glyphicon-exclamation-sign', '.notifications-desktop-wrapper');
 		
-		$(document).ready(function(){
-			$('.notifications-collapsed-menu').hide();
-		  	$('.notification-toggle-button').click(function(){
-		    	$('.notifications-collapsed-menu').slideToggle();
-		  	});
-		});
-		
-		$(document).ready(function(){
-			$('.notification-breakpoint-menu').hide();
-		  	$('.glyphicon-exclamation-sign').click(function(){
-		    	$('.notification-breakpoint-menu').slideToggle();
-		  	});
-		});
-		
-		$('.grammar-dropdown').change(function() {
-  			window.location = $(this).val();
 		});
     </script>
     

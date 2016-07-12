@@ -101,15 +101,53 @@ body {
   width: auto;
 }
 
+.dark {
+  background-color: #0e2421;
+}
+
+.grammar-desktop-container {
+  padding-left: 15px;
+}
+
+.grammar-desktop-menu {
+  background-color: #0e2421;
+  border-top: 1px solid #D4AB1D;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+  position: relative;
+  z-index: 9998;
+  width: auto;
+  height: auto;
+  left: 0px;
+  top: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.grammar-desktop-menu p {
+  color: #D4AB1D;
+}
+
+.notifications-desktop-container {
+  padding-right: 15px;
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
 .notification-breakpoint-menu {
-  background-color: #19413C;
+  background-color: #0e2421;
   border-top: 1px solid #D4AB1D;
   padding-top: 5px;
-  position: fixed;
+  padding-right: 15px;
+  position: relative;
   z-index: 9999;
   width: 100%;
   height: auto;
-  top: 50px;
+  top: 15px;
+  right: 0px;
   display: flex;
   flex-direction: column;
 }
@@ -144,6 +182,9 @@ body {
 }
 
 .notifications-collapsed-menu {
+  display: flex;
+  align-items: center;
+  height: auto;
   background-color: #0e2421;
 }
 
@@ -184,6 +225,14 @@ span.glyphicon-menu-hamburger {
     transform:scale(1.5,1); /* W3C */
     font-size: 1.6em;
     color: #D4AB1D;
+}
+
+.grammar-box {
+  background-color: #0e2421;
+}
+
+.active {
+  background-color: #0e2421;
 }
 
 .grammar-dropdown {
