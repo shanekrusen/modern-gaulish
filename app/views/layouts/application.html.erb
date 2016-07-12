@@ -44,7 +44,7 @@
 			<p><%= link_to 'Forum', forum_path, id: "nav-link-id" %>&nbsp;&nbsp;&nbsp;&nbsp;</p>
 			<div class="grammar-desktop-wrapper">
 				<div class="grammar-desktop-container">
-					<p style="cursor: pointer;" class="grammar-desktop" id="nav-link-id">Grammar v</p>
+					<p style="cursor: pointer;" class="grammar-desktop" id="nav-link-id">Grammar &#x2304;</p>
 				</div>
 				<div class="grammar-desktop-menu">
 					<%= link_to 'Introduction', introduction_path, class: "collapse-link", id:"nav-link-id" %><br />
@@ -58,7 +58,7 @@
 			<% if user_signed_in? %>
 				<div class="notifications-desktop-wrapper">
 					<div class="notifications-desktop-container">
-						<span class="glyphicon glyphicon-exclamation-sign" style="cursor: pointer;"> <%= current_user.user_notifications.count %></span>
+						<span class="collapse-link glyphicon glyphicon-exclamation-sign" style="cursor: pointer;"> <%= current_user.user_notifications.count %></span>
 					</div>
 					<div class="notification-breakpoint-menu">
 						<% if user_signed_in? %>
@@ -90,7 +90,7 @@
 	<div class="breakpoint-collapse-container">
 		<%= link_to 'Forum', forum_path, class: "collapse-link", id: "nav-link-id" %></p>
 		<% if user_signed_in? %>
-			<p class="notification-toggle-button collapse-link" style="cursor: pointer;"><%= current_user.user_notifications.count %> Notifications +</p>
+			<p class="notification-toggle-button collapse-link" id="nav-link-id" style="cursor: pointer;"><%= current_user.user_notifications.count %> Notifications &#x2304;</p>
 			<div class="notifications-collapsed-menu">
 				<% if current_user.user_notifications.present? %>
 					<% current_user.user_notifications.each do |notification| %>
@@ -111,7 +111,7 @@
 			<p><%= link_to 'Sign In', new_user_session_path, class: "collapse-link", id: "nav-link-id" %></p>
 			<p><%= link_to 'Sign Up', new_user_registration_path, class: "collapse-link", id: "nav-link-id" %></p>
 		<% end %>
-		<p style="cursor: pointer;" class="grammar collapse-link">Grammar +</p>
+		<p style="cursor: pointer;" id="nav-link-id" class="grammar collapse-link">Grammar &#x2304;</p>
 		<div class="grammar-box">
 			<%= link_to 'Introduction', introduction_path, class: "collapse-link", id:"nav-link-id" %><br />
 			<%= link_to 'Orthography', orthography_path, class: "collapse-link", id:"nav-link-id" %><br />
