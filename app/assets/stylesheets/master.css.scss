@@ -5,6 +5,11 @@ body {
   background-color: #19413C !important;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 ::-moz-selection { /* Code for Firefox */
     background: rgba(212, 171, 29, 0.5);
 }
