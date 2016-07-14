@@ -1,12 +1,13 @@
 # The Modern Gaulish Language
 
-## Versions
+## Versions 
 
-Built with `Ruby 2.3.1` and `Rails 5`
-
-## Deployment
-
-Stored on Github (version `48`) and Deployed to **Heroku** using the **Cedar** stack (version `48`).
+```ruby
+Ruby  2.3.1
+Rails 5
+Github hosting version 51
+Heroku hosting version 51
+```
 
 ## Contributors
 

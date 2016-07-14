@@ -13,6 +13,11 @@ body {
     background: rgba(212, 171, 29, 0.5);
 }
 
+img {
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
 .inline-citation {
   white-space: pre-wrap;
   font-family: 'Raleway', sans-serif;
@@ -233,6 +238,8 @@ span.glyphicon-menu-hamburger {
 }
 
 .grammar-box {
+  padding-top:15px;
+  padding-bottom: 15px;
   background-color: #0e2421;
 }
 
