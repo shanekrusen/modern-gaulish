@@ -10,4 +10,12 @@ class GrammarPagesController < ApplicationController
   def phonology
     
   end
+  
+  def sound_changes
+    
+  end
+  
+  def personal_pronouns
+    
+  end
 end

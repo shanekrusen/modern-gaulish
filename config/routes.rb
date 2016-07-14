@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'orthography', to: "grammar_pages#orthography"
   get 'phonology', to: "grammar_pages#phonology"
   get 'sound_changes', to: "grammar_pages#sound_changes"
+  get 'personal_pronouns', to: "grammar_pages#personal_pronouns"
   get 'forum', to: "categories#index"
   
   resources :categories, only: :show do
