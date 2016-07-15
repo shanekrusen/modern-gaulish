@@ -1,13 +1,5 @@
 <!DOCTYPE html>
 
-<% if browser.device.mobile? %>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<% else %>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<% end %>
-<meta name="HandheldFriendly" content="true">
-<meta name="theme-color" content="#19413C">
-
 <html>
   <head>
     <title>The Modern Gaulish Language</title>
@@ -20,6 +12,13 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:image" content="http://i.imgur.com/iv9Kw9M.jpg" />
 	<meta property="og:title" content="The Modern Gaulish Language" />
+  	<% if cookies[:responsive] == "no" %>
+		<meta name="viewport" content="width=1024, initial-scale=0, maximum-scale=1.0, minimum-scale=0.25, user-scalable=yes" />
+	<% else %>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />	
+	<% end %>
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="theme-color" content="#19413C" />
   </head>
 
   <body>
@@ -42,6 +41,9 @@
 		</div>
 		<div class="navbar-middle-left">
 			<p><%= link_to 'Forum', forum_path, id: "nav-link-id" %>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+			<% if cookies[:responsive] == "no" %>
+				<a style="margin-top: 15px;" href="/responsive/optIn" class="collapse-link" id="nav-link-id">Mobile View</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<% end %>
 			<div class="grammar-desktop-wrapper">
 				<div class="grammar-desktop-container">
 					<p style="cursor: pointer;" class="grammar-desktop" id="nav-link-id">Grammar &#x21C2;</p>
@@ -118,6 +120,7 @@
 				<%= link_to 'Personal Pronouns', personal_pronouns_path, class: "collapse-link", id: "nav-link-id" %>
 			</div>
 		</div>
+		<a href="/responsive/optOut" id="nav-link-id" class="collapse-link">Desktop View</a>
 	</div>
 	
 	<div style="clear: both;"></div>

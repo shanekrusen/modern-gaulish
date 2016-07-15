@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do  
   devise_for :users
   root 'welcome#index'
   
@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   end
   
   resources :user_notifications, only: :destroy
+  
+  get 'responsive/:action', :controller => :responsive
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
