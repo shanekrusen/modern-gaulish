@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'phonology', to: "grammar_pages#phonology"
   get 'sound_changes', to: "grammar_pages#sound_changes"
   get 'personal_pronouns', to: "grammar_pages#personal_pronouns"
+  get 'verbal_paradigm', to: "grammar_pages#verbal_paradigm"
   get 'forum', to: "categories#index"
   
   resources :categories, only: :show do

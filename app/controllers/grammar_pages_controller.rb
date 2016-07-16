@@ -18,4 +18,8 @@ class GrammarPagesController < ApplicationController
   def personal_pronouns
     
   end
+  
+  def verbal_paradigm
+    
+  end
 end
