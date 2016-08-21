@@ -1,0 +1,51 @@
+<% input_year = params[:year].to_i %>
+<% input_month = params[:month].to_s %>
+<% input_metonic = params[:metonic] %>
+
+<div class="spacer"></div>
+
+<br />
+
+<div class="calendar-form">
+	<div class="calendar-form-wrapper">
+		<h3 style="color: #D4AB1D;">Generate Calendar</h3><br />
+		
+		<%= form_tag(calendar_view_path, method: :get) do %>
+		  <%= text_field_tag(:year, "Year") %><br /><br />
+		  <%= select_tag :month, options_for_select([['Intercalary One', 'Intercalary One'], ['Samonios', 'Samonios'], ['Dumanios', 'Dumanios'], ['Rivros', 'Rivros'], ['Anagantios', 'Anagantios'], ['Ogronios', 'Ogronios'], ['Cutios', 'Cutios'], ['Intercalary Two', 'Intercalary Two'], ['Giamonios', 'Giamonios'], ['Simiuisonna', 'Simiuisonna'], ['Equos', 'Equos'], ['Elembi', 'Elembi'], ['Aedrinni', 'Aedrinni'], ['Cantlos', 'Cantlos']])%><br /><br />
+		  <%= check_box_tag :metonic %>
+		  <%= label_tag :metonic, "Metonic?" %><br /><br />
+		  <%= submit_tag "Submit" %>
+		<% end %>
+	</div>
+</div>
+
+<% if params[:year].present? && params[:month].present? %>
+	<div class="calendar-container">
+		<div class="calendar-wrapper">
+			<div class="calendar-header"><h2><%= input_month + " " + input_year.to_s %></h2></div>
+			<br />
+			<br />
+			<% if input_metonic == 1 %>
+				<% year = Coligny::ColignyDate.new(input_year, input_month, 1, true) %>
+				<% (1...(year.month.days + 1)).each do |day| %>
+					<div class="calendar-block">
+						<h1><%= day %></h1>
+						<h4><%= Coligny::ColignyDate.new(year.year, year.month.name, day, true).to_gregorian_date.strftime('%d %b %Y') %></h4>
+					</div>
+				<% end %>
+			<% else %>
+				<% year = Coligny::ColignyDate.new(input_year, input_month, 1) %>
+				<% (1...(year.month.days + 1)).each do |day| %>
+					<div class="calendar-block">
+						<h1><%= day %></h1>
+						<h4><%= Coligny::ColignyDate.new(year.year, year.month.name, day).to_gregorian_date.strftime('%d %b %Y') %></h4>
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+<% end %>
+
+<div style="clear: both;"></div>
+<br />

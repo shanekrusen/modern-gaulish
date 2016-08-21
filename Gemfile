@@ -56,3 +56,5 @@ gem 'browser'
 gem 'devise'
 
 gem "select2-rails"
+
+gem 'coligny'

@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'personal_pronouns', to: "grammar_pages#personal_pronouns"
   get 'verbal_paradigm', to: "grammar_pages#verbal_paradigm"
   get 'forum', to: "categories#index"
+  get 'calendar_view', to: "calendars#show"
+  get 'calendar', to: "calendars#generate"
   
   resources :categories, only: :show do
     resources :posts do

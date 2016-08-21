@@ -151,6 +151,12 @@
 			
 			activate('.grammar-desktop', '.grammar-desktop-wrapper');
 			activate('.glyphicon-exclamation-sign', '.notifications-desktop-wrapper');
+			
+			$(window).resize(function() {
+				if ($(window).width() > 768 && $('.breakpoint-collapse-container').is(":visible")) {
+					$('.breakpoint-collapse-container').hide();
+				};
+			});
 		
 		});
     </script>

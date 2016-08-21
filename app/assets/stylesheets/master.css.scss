@@ -18,6 +18,59 @@ html, body {
     background: rgba(212, 171, 29, 0.5);
 }
 
+.calendar-form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.calendar-form-wrapper {
+  width: 90%;
+}
+
+.calendar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+}
+
+.calendar-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
+.calendar-block {
+  width: calc(100% / 8);
+  height: auto;
+  border: 1px solid #D4AB1D;
+  color: #D4AB1D;
+  margin: 3px;
+}
+
+.calendar-block h4 {
+  font-size: 75%;
+}
+
+.calendar-header {
+  min-width: 100%;
+  color: #D4AB1D;
+}
+
+select {
+  background-color: #0e2421;
+  border-color: #0e2421;
+}
+
+select:focus {
+  outline: none;
+}
+
 .hero-image {
   max-height: calc(100vh - 50px);
 }
