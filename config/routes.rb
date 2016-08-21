@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get 'verbal_paradigm', to: "grammar_pages#verbal_paradigm"
   get 'forum', to: "categories#index"
   get 'calendar_view', to: "calendars#show"
-  get 'calendar', to: "calendars#generate"
   
   resources :categories, only: :show do
     resources :posts do
