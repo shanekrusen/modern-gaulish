@@ -55,7 +55,8 @@
 					<%= link_to 'Sound Changes', sound_changes_path, class: "collapse-link", id:"nav-link-id" %><br />
 					<%= link_to 'Personal Pronouns', personal_pronouns_path, class: "collapse-link", id: "nav-link-id" %><br />
 				</div>
-			</div>
+			</div>&nbsp;&nbsp;&nbsp;&nbsp;
+			<p><%= link_to 'Calendar', calendar_view_path, id: "nav-link-id" %></p>
 		</div>
 		<div class="navbar-middle-right">
 			<% if user_signed_in? %>
@@ -91,7 +92,8 @@
 	</div>
 	
 	<div class="breakpoint-collapse-container">
-		<%= link_to 'Forum', forum_path, class: "collapse-link", id: "nav-link-id" %></p>
+		<p><%= link_to 'Calendar', calendar_view_path, class: "collapse-link", id: "nav-link-id" %></p>
+		<p><%= link_to 'Forum', forum_path, class: "collapse-link", id: "nav-link-id" %></p>
 		<% if user_signed_in? %>
 			<p class="notification-toggle-button collapse-link" id="nav-link-id" style="cursor: pointer;"><%= current_user.user_notifications.count %> Notifications &#x21C2;</p>
 			<div class="notifications-collapsed-menu">
