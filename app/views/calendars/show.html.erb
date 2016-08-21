@@ -29,25 +29,25 @@
 				<br />
 				<br />
 				<div class="calendar-block">
-					<h4>Sunday</h4>
+					<p>Sunday</p>
 				</div>
 				<div class="calendar-block">
-					<h4>Monday</h4>
+					<p>Monday</p>
 				</div>
 				<div class="calendar-block">
-					<h4>Tuesday</h4>
+					<p>Tuesday</p>
 				</div>
 				<div class="calendar-block">
-					<h4>Wednesday</h4>
+					<p>Wednesday</p>
 				</div>
 				<div class="calendar-block">
-					<h4>Thursday</h4>
+					<p>Thursday</p>
 				</div>
 				<div class="calendar-block">
-					<h4>Friday</h4>
+					<p>Friday</p>
 				</div>
 				<div class="calendar-block">
-					<h4>Saturday</h4>
+					<p>Saturday</p>
 				</div>
 				<% if params[:metonic] == "1" %>
 					<% year = Coligny::ColignyDate.new(params[:year].to_i, params[:month].to_s, 1, true) %>
@@ -59,8 +59,7 @@
 					<% (1...(year.month.days + 1)).each do |day| %>
 						<div class="calendar-block">
 							<h1><%= day %></h1>
-							<h4><%= Coligny::ColignyDate.new(params[:year].to_i, params[:month].to_s, day, true).to_gregorian_date %></h4>
-							<!-- # .strftime('%d %b %Y')  -->
+							<h4><%= Coligny::ColignyDate.new(params[:year].to_i, params[:month].to_s, day, true).to_gregorian_date.strftime('%d %b %Y') %></h4>
 						</div>
 					<% end %>
 				<% else %>

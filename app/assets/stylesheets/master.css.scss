@@ -42,7 +42,7 @@ html, body {
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: wrap;
-  max-width: 90%
+  max-width: 90%;
 }
 
 .calendar-block {
@@ -54,6 +54,10 @@ html, body {
 
 .calendar-block h4 {
   font-size: 75%;
+}
+
+.calendar-block p {
+  font-size: 2vw;
 }
 
 .calendar-header {
