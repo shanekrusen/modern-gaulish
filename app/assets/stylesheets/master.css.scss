@@ -34,7 +34,7 @@ html, body {
   justify-content: center;
   align-items: center;
   align-content: center;
-  width: 100%;
+  width: 100vw;
 }
 
 .calendar-wrapper{
@@ -42,15 +42,14 @@ html, body {
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: wrap;
-  width: 90%;
+  max-width: 90%
 }
 
 .calendar-block {
-  width: calc(100% / 8);
+  width: calc(100% / 7);
   height: auto;
   border: 1px solid #D4AB1D;
-  color: #D4AB1D;
-  margin: 3px;
+  color: #D4AB1D;;
 }
 
 .calendar-block h4 {
@@ -60,6 +59,25 @@ html, body {
 .calendar-header {
   min-width: 100%;
   color: #D4AB1D;
+}
+
+.calendar-block h1 {
+  font-size: 200%;
+}
+
+.calendar-error-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.calendar-error-wrapper {
+  width: 90%;
+}
+
+.calendar-error {
+  width: 90%;
+  color: red;
 }
 
 select {

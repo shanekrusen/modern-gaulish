@@ -1,13 +1,18 @@
-<div class="spacer"></div>
+<% if params[:metonic] == "1" %>
+	<% metonic = true %>
+<% else %>
+	<% metonic = false %>
+<% end %>
 
-<br />
+<div class="spacer"></div>
 
 <div class="calendar-form">
 	<div class="calendar-form-wrapper">
 		<h3 style="color: #D4AB1D;">Generate Calendar</h3><br />
 		
 		<%= form_tag(calendar_view_path, method: :get) do %>
-		  <%= text_field_tag(:year, "Year") %><br /><br />
+		  <%= text_field_tag(:year, "Year") %><br />
+		  <%= label_tag :year, "Year must be in BG (BG = CE + 1019)"%><br /><br />
 		  <%= select_tag :month, options_for_select([['Intercalary One', 'Intercalary One'], ['Samonios', 'Samonios'], ['Dumanios', 'Dumanios'], ['Rivros', 'Rivros'], ['Anagantios', 'Anagantios'], ['Ogronios', 'Ogronios'], ['Cutios', 'Cutios'], ['Intercalary Two', 'Intercalary Two'], ['Giamonios', 'Giamonios'], ['Simiuisonna', 'Simiuisonna'], ['Equos', 'Equos'], ['Elembi', 'Elembi'], ['Aedrinni', 'Aedrinni'], ['Cantlos', 'Cantlos']])%><br /><br />
 		  <%= check_box_tag :metonic %>
 		  <%= label_tag :metonic, "Metonic?" %><br /><br />
@@ -17,30 +22,71 @@
 </div>
 
 <% if params[:year].present? && params[:month].present? %>
-	<div class="calendar-container">
-		<div class="calendar-wrapper">
-			<div class="calendar-header"><h2><%= params[:month].to_s + " " + params[:year].to_s %></h2></div>
-			<br />
-			<br />
-			<% if params[:metonic] == "1" %>
-				<% year = Coligny::ColignyDate.new(params[:year].to_i, params[:month].to_s, 1, true) %>
-				<% (1...(year.month.days + 1)).each do |day| %>
-					<div class="calendar-block">
-						<h1><%= day %></h1>
-						<h4><%= Coligny::ColignyDate.new(year.year, year.month.name, day, true).to_gregorian_date.strftime('%d %b %Y') %></h4>
-					</div>
+	<% if !Coligny::ColignyYear.new(params[:year].to_i, metonic).months.find { |s| s.name == params[:month].to_s }.nil? %>
+		<div class="calendar-container">
+			<div class="calendar-wrapper">
+				<div class="calendar-header"><h2><%= params[:month].to_s + " " + params[:year].to_s %></h2></div>
+				<br />
+				<br />
+				<div class="calendar-block">
+					<h4>Sunday</h4>
+				</div>
+				<div class="calendar-block">
+					<h4>Monday</h4>
+				</div>
+				<div class="calendar-block">
+					<h4>Tuesday</h4>
+				</div>
+				<div class="calendar-block">
+					<h4>Wednesday</h4>
+				</div>
+				<div class="calendar-block">
+					<h4>Thursday</h4>
+				</div>
+				<div class="calendar-block">
+					<h4>Friday</h4>
+				</div>
+				<div class="calendar-block">
+					<h4>Saturday</h4>
+				</div>
+				<% if params[:metonic] == "1" %>
+					<% year = Coligny::ColignyDate.new(params[:year].to_i, params[:month].to_s, 1, true) %>
+					<% year.to_gregorian_date.wday.times do |blank| %>
+						<div class="calendar-block">
+							-
+						</div>
+					<% end %>
+					<% (1...(year.month.days + 1)).each do |day| %>
+						<div class="calendar-block">
+							<h1><%= day %></h1>
+							<h4><%= Coligny::ColignyDate.new(params[:year].to_i, params[:month].to_s, day, true).to_gregorian_date %></h4>
+							<!-- # .strftime('%d %b %Y')  -->
+						</div>
+					<% end %>
+				<% else %>
+					<% year = Coligny::ColignyDate.new(params[:year].to_i, params[:month].to_s, 1) %>
+					<% year.to_gregorian_date.wday.times do |blank| %>
+						<div class="calendar-block">
+							-
+						</div>
+					<% end %>
+					<% (1...(year.month.days + 1)).each do |day| %>
+						<div class="calendar-block">
+							<h1><%= day %></h1>
+							<h4><%= Coligny::ColignyDate.new(year.year, year.month.name, day).to_gregorian_date.strftime('%d %b %Y') %></h4>
+						</div>
+					<% end %>
 				<% end %>
-			<% else %>
-				<% year = Coligny::ColignyDate.new(params[:year].to_i, params[:month].to_s, 1) %>
-				<% (1...(year.month.days + 1)).each do |day| %>
-					<div class="calendar-block">
-						<h1><%= day %></h1>
-						<h4><%= Coligny::ColignyDate.new(year.year, year.month.name, day).to_gregorian_date.strftime('%d %b %Y') %></h4>
-					</div>
-				<% end %>
-			<% end %>
+			</div>
 		</div>
-	</div>
+	<% else %>
+		<br />
+		<div class="calendar-error-container">
+			<div class="calendar-error-wrapper">
+				<p class="calendar-error">Month not present in year specified!</p>
+			</div>
+		</div>
+	<% end %>
 <% end %>
 
 <div style="clear: both;"></div>
