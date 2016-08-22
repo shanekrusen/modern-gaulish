@@ -60,7 +60,7 @@
 							-
 						</div>
 					<% end %>
-					<% (1...(year.month.days + 1)).each do |day| %>
+					<% (1...(year.month.days)).each do |day| %>
 						<div class="calendar-block">
 							<h1><%= day %></h1>
 							<h4><%= Coligny::ColignyDate.new(params[:year].to_i, params[:month].to_s, day, true).to_gregorian_date.strftime('%d %b %Y') %></h4>
