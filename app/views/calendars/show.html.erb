@@ -14,12 +14,20 @@
 		<h3 style="color: #D4AB1D;">Generate Calendar</h3><br />
 		
 		<%= form_tag(calendar_view_path, method: :get) do %>
-		  <%= text_field_tag(:year, "Year") %><br />
-		  <%= label_tag :year, "Year must be in BG (BG = CE + 1019)"%><br /><br />
-		  <%= select_tag :month, options_for_select([['Intercalary One', 'Intercalary One'], ['Samonios', 'Samonios'], ['Dumanios', 'Dumanios'], ['Rivros', 'Rivros'], ['Anagantios', 'Anagantios'], ['Ogronios', 'Ogronios'], ['Cutios', 'Cutios'], ['Intercalary Two', 'Intercalary Two'], ['Giamonios', 'Giamonios'], ['Simiuisonna', 'Simiuisonna'], ['Equos', 'Equos'], ['Elembi', 'Elembi'], ['Aedrinni', 'Aedrinni'], ['Cantlos', 'Cantlos']])%><br /><br />
-		  <%= check_box_tag :metonic %>
-		  <%= label_tag :metonic, "Metonic?" %><br /><br />
-		  <%= submit_tag "Submit" %>
+			<% if params[:year].present? %>
+				<%= text_field_tag(:year, params[:year]) %><br />
+			<% else %>
+		    	<%= text_field_tag(:year, "Year") %><br />
+		    <% end %>
+		    <%= label_tag :year, "Year must be in BG (BG = CE + 1019)"%><br /><br />
+		    <%= select_tag :month, options_for_select([['Quimonios', 'Quimonios'], ['Samonios', 'Samonios'], ['Dumanios', 'Dumanios'], ['Riuros', 'Riuros'], ['Anagantios', 'Anagantios'], ['Ogronios', 'Ogronios'], ['Cutios', 'Cutios'], ['Rantaranos', 'Rantaranos'], ['Giamonios', 'Giamonios'], ['Simiuisonna', 'Simiuisonna'], ['Equos', 'Equos'], ['Elembi', 'Elembi'], ['Aedrinni', 'Aedrinni'], ['Cantlos', 'Cantlos']], params[:month])%><br /><br />
+		    <% if params[:metonic] == "1" %>
+		    	<%= check_box_tag :metonic, "1", true %>
+		    <% else %>
+		    	<%= check_box_tag :metonic %>
+		    <% end %>
+		    <%= label_tag :metonic, "Metonic?" %><br /><br />
+		    <%= submit_tag "Submit" %>
 		<% end %>
 	</div>
 </div>

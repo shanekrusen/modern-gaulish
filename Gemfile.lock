@@ -39,7 +39,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.1)
-    autoprefixer-rails (6.4.0.2)
+    autoprefixer-rails (6.4.0.3)
       execjs
     bcrypt (3.1.11)
     bootstrap-sass (3.3.7)
@@ -55,7 +55,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
-    coligny (0.3.4)
+    coligny (0.3.5)
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
     devise (4.2.0)
