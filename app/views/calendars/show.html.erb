@@ -53,33 +53,29 @@
 					<p>Saturday</p>
 				</div>
 				<% if params[:metonic] == "1" %>
-					<% date = Coligny::ColignyDate.new(year_input.to_i, month_input, 1, true) %>
-					<%= date.month.days %>
-					<%= date.month.inspect %>
-					<% date.to_gregorian_date.wday.times do |blank| %>
-						<div class="calendar-block">
-							-
-						</div>
-					<% end %>
-					<% (1...(date.month.days + 1)).each do |day| %>
-						<div class="calendar-block">
-							<h1><%= day %></h1>
-							<h4><%= Coligny::ColignyDate.new(year_input.to_i, month_input, day, true).to_gregorian_date.strftime('%d %b %Y') %></h4>
-						</div>
+					<% date = Coligny::ColignyYear.new(params[:year].to_i, true) %>
+				<% else %>
+					<% date = Coligny::ColignyYear.new(params[:year].to_i) %>
+				<% end %>
+				<% month = date.months.find { |s| s.name == params[:month] } %>
+				<% if params[:metonic] == "1" %>
+					<% Coligny::ColignyDate.new(params[:year].to_i, params[:month], 1, true).to_gregorian_date.wday.times do |block| %>
+						<div class="calendar-block">-</div>
 					<% end %>
 				<% else %>
-					<% date = Coligny::ColignyDate.new(year_input.to_i, month_input, 1) %>
-					<% date.to_gregorian_date.wday.times do |blank| %>
-						<div class="calendar-block">
-							-
-						</div>
+					<% Coligny::ColignyDate.new(params[:year].to_i, params[:month], 1).to_gregorian_date.wday.times do |block| %>
+						<div class="calendar-block">-</div>
 					<% end %>
-					<% (1...(date.month.days + 1)).each do |day| %>
-						<div class="calendar-block">
-							<h1><%= day %></h1>
-							<h4><%= Coligny::ColignyDate.new(year_input.to_i, month_input, day).to_gregorian_date.strftime('%d %b %Y') %></h4>
-						</div>
-					<% end %>
+				<% end %>
+				<% (1...(month.days + 1)).each do |day| %>
+					<div class="calendar-block">
+						<h1><%= day %></h1>
+						<% if params[:metonic] == "1" %>
+							<h4><%= Coligny::ColignyDate.new(params[:year].to_i, params[:month], day, true).to_gregorian_date %></h4>
+						<% else %>
+							<h4><%= Coligny::ColignyDate.new(params[:year].to_i, params[:month], day).to_gregorian_date %></h4>
+						<% end %>
+					</div>
 				<% end %>
 			</div>
 		</div>
